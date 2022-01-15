@@ -1,0 +1,335 @@
+[
+  // disable
+  {
+    "keys": [
+      "f9"
+    ],
+    "command": "noop"
+  },
+  {
+    "keys": [
+      "f5"
+    ],
+    "command": "noop"
+  },
+  {
+    "keys": [
+      "super+shift+w"
+    ],
+    "command": "noop"
+  },
+  {
+    "keys": [
+      "ctrl+backquote"
+    ],
+    "command": "noop"
+  },
+  {
+    "keys": [
+      "super+w"
+    ],
+    "command": "close"
+  },
+  {
+    "keys": [
+      "super+w"
+    ],
+    "command": "noop",
+    "context": [
+      {
+        "key": "group_has_transient_sheet",
+        "operator": "equal",
+        "operand": true
+      }
+    ]
+  },
+  // override
+  {
+    "keys": [
+      "ctrl+escape"
+    ],
+    "command": "show_panel",
+    "args": {
+      "panel": "console",
+      "toggle": true
+    }
+  },
+  {
+    "keys": [
+      "super+t"
+    ],
+    "command": "show_overlay",
+    "args": {
+      "overlay": "goto",
+      "text": "#"
+    }
+  },
+  {
+    "keys": [
+      "super+."
+    ],
+    "command": "find_under"
+  },
+  {
+    "keys": [
+      "super+,"
+    ],
+    "command": "find_under_prev"
+  },
+  {
+    "keys": [
+      "ctrl+super+enter"
+    ],
+    "command": "find_all_under"
+  },
+  {
+    "keys": [
+      "ctrl+left"
+    ],
+    "command": "move",
+    "args": {
+      "by": "subwords",
+      "forward": false
+    }
+  },
+  {
+    "keys": [
+      "ctrl+right"
+    ],
+    "command": "move",
+    "args": {
+      "by": "subwords",
+      "forward": true
+    }
+  },
+  {
+    "keys": [
+      "ctrl+]"
+    ],
+    "command": "jump_back"
+  },
+  {
+    "keys": [
+      "ctrl+["
+    ],
+    "command": "jump_forward"
+  },
+  // alternatives
+  // toggle shortcuts
+  {
+    "keys": [
+      "ctrl+alt+l"
+    ],
+    "command": "multicommand",
+    "args": {
+      "commands": [
+        {
+          "command": "toggle_setting",
+          "args": {
+            "setting": "gutter",
+          },
+        },
+        {
+          "command": "toggle_setting",
+          "args": {
+            "setting": "line_numbers",
+          },
+        }
+      ]
+    }
+  },
+  {
+    "keys": [
+      "ctrl+alt+t"
+    ],
+    "command": "toggle_tabs"
+  },
+  {
+    "keys": [
+      "ctrl+alt+s"
+    ],
+    "command": "toggle_status_bar"
+  },
+  {
+    "keys": [
+      "ctrl+alt+e"
+    ],
+    "command": "toggle_side_bar"
+  },
+  // PLUGINS ============================
+  // origami
+  {
+    "keys": [
+      "primary+k",
+      "enter"
+    ],
+    "command": "destroy_pane",
+    "args": {
+      "direction": "self"
+    }
+  },
+  // terminus
+  {
+    "keys": [
+      "primary+escape"
+    ],
+    "command": "toggle_terminus_panel"
+  },
+  {
+    "keys": [
+      "shift+f10"
+    ],
+    "command": "terminus_open"
+  },
+  // default font size reset
+  {
+    "keys": [
+      "super+0"
+    ],
+    "command": "reset_font_size_to_user_defaults"
+  },
+  // todoreview
+  {
+    "keys": [
+      "super+f1"
+    ],
+    "command": "todo_review"
+  },
+  // expand region
+  {
+    "keys": [
+      "ctrl+="
+    ],
+    "command": "expand_region"
+  },
+  {
+    "keys": [
+      "ctrl+-"
+    ],
+    "command": "expand_region",
+    "args": {
+      "undo": true
+    },
+    "context": [
+      {
+        "key": "expand_region_soft_undo"
+      }
+    ]
+  },
+  // LSP
+  {
+    "command": "lsp_code_actions",
+    "keys": [
+      "ctrl+."
+    ],
+    "context": [
+      {
+        "key": "lsp.session_with_capability",
+        "operator": "equal",
+        "operand": "codeActionProvider"
+      }
+    ]
+  },
+  {
+    "command": "lsp_format_document",
+    "keys": [
+      "ctrl+shift+f"
+    ],
+    "context": [
+      {
+        "key": "lsp.session_with_capability",
+        "operator": "equal",
+        "operand": "documentFormattingProvider | documentRangeFormattingProvider"
+      }
+    ]
+  },
+  {
+    "command": "lsp_symbol_definition",
+    "args": {
+      "side_by_side": false
+    },
+    "keys": [
+      "f12"
+    ],
+    "context": [
+      {
+        "key": "lsp.session_with_capability",
+        "operator": "equal",
+        "operand": "definitionProvider"
+      },
+      {
+        "key": "auto_complete_visible",
+        "operator": "equal",
+        "operand": false
+      }
+    ]
+  },
+  {
+    "command": "lsp_symbol_type_definition",
+    "args": {
+      "side_by_side": false
+    },
+    "keys": [
+      "f9"
+    ],
+    "context": [
+      {
+        "key": "lsp.session_with_capability",
+        "operator": "equal",
+        "operand": "typeDefinitionProvider"
+      },
+      {
+        "key": "auto_complete_visible",
+        "operator": "equal",
+        "operand": false
+      }
+    ]
+  },
+  {
+    "command": "lsp_symbol_declaration",
+    "args": {
+      "side_by_side": false
+    },
+    "keys": [
+      "f10"
+    ],
+    "context": [
+      {
+        "key": "lsp.session_with_capability",
+        "operator": "equal",
+        "operand": "declarationProvider"
+      },
+      {
+        "key": "auto_complete_visible",
+        "operator": "equal",
+        "operand": false
+      }
+    ]
+  },
+  {
+    "command": "lsp_hover",
+    "keys": [
+      "f1"
+    ],
+    "context": [
+      {
+        "key": "lsp.session_with_capability",
+        "operator": "equal",
+        "operand": "hoverProvider"
+      }
+    ]
+  },
+  {
+    "command": "lsp_symbol_rename",
+    "keys": [
+      "f2"
+    ],
+    "context": [
+      {
+        "key": "lsp.session_with_capability",
+        "operator": "equal",
+        "operand": "hoverProvider"
+      }
+    ]
+  },
+]
